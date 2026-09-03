@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>video uploader-upload</title>
+</head>
+<body>
+    <h3>upload</h3>
+        <div id="drop_zone">
+            <p>Drag & Drop your video</p>
+            <p>or</p>
+            <button type="button" id="choose_file">Choose Video</button>
+            <input type="file" name="video" accept="video/mp4" id="video_upload">
+        </div>
+        <input type="text" name="title" placeholder="please enter video title" id="title_input">
+        <button id="upload">upload</button><br>
+        <div id="progress_container">
+            <progress id="progress_bar" value="0" max="100"></progress>
+            <span id="progress_counter"></span>
+        </div>
+    <script src="upload.js"></script>
+</body>
+</html>

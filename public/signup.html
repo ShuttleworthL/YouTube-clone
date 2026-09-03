@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>login</title>
+</head>
+<body>
+    <div class="signup_box">
+        <label>Sign Up Now</label>
+        <input type="text" id="username" class="signup_info" placeholder="Username"><br><br>
+        <input type="password" id="password" class="signup_info" placeholder="Password"><br><br>
+        <button type="submit" id="submit" onclick="signup()">Create Account</button>
+    </div>
+    <script>
+        async function signup() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const result = await fetch("/signup", {
+                method: "POST",
+                headers: {"content-type": "application/json"},
+                body: JSON.stringify({username: username, password: password})
+            });
+            if (result.status === 200) {
+                window.location.href = "/index.html"
+            }
+        };
+    </script>
+</body>
+</html>
